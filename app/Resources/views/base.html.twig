@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Usuarios{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link href="{{ asset("bundles/usuarios/css/application.min.css")}}" rel="stylesheet">
+        
+</head>
+<body>
+    {% block menu %}
+        {% include 'menu.html.twig' only %}
+    {% endblock %}
+
+    {% block body %}{% endblock body %}
+        
+    {% block javascripts %}
+        <script src="{{ asset("bundles/usuarios/lib/jquery/dist/jquery.min.js")}}"></script>
+        <script src="{{ asset("bundles/usuarios/lib/jquery-pjax/jquery.pjax.js")}}"></script>
+        <script src="{{ asset("bundles/usuarios/lib/bootstrap-sass/assets/javascripts/bootstrap.min.js")}}"></script>
+        <script src="{{ asset("bundles/usuarios/lib/widgster/widgster.js")}}"></script>
+        <script src="{{ asset("bundles/usuarios/lib/underscore/underscore.js")}}"></script>
+        <script src="{{ asset("bundles/usuarios/js/app.js")}}"></script>
+        <script src="{{ asset("bundles/usuarios/js/settings.js")}}"></script>
+        <script src="{{ asset("bundles/usuarios/lib/bootstrap-select/dist/js/bootstrap-select.min.js") }}"></script>
+        <script src="{{ asset("bundles/usuarios/lib/underscore/underscore.js") }}"></script>
+        <script src="{{ asset("bundles/usuarios/lib/backbone/backbone.js") }}"></script>
+        <script src="{{ asset("bundles/usuarios/lib/backbone.paginator/lib/backbone.paginator.min.js") }}"></script>
+        <script src="{{ asset("bundles/usuarios/lib/backgrid/lib/backgrid.min.js") }}"></script>
+        <script src="{{ asset("bundles/usuarios/lib/backgrid-paginator/backgrid-paginator.js") }}"></script>
+        <script src="{{ asset("bundles/usuarios/lib/datatables/media/js/jquery.dataTables.min.js") }}"></script>
+        <script src="{{ asset("bundles/usuarios/js/tables-dynamic.js") }}"></script>
+
+    {% endblock %}
+</body>
+</html>

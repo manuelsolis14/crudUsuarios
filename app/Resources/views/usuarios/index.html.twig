@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="content container">
+        <h2 class="page-title">Listado de usuarios</h2>
+        <section class="widget">
+            <div class="body">
+
+                <div class="mt">
+                    <table id="datatable-table" class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                                <th class="hidden-xs">Apellidos</th>
+                                <th class="hidden-xs">Teléfono</th>
+                                <th class="hidden-xs">Dirección</th>
+                                <th class="hidden-xs">Sexo</th>
+                                <th class="hidden-xs">Redes sociales</th>
+                                <th class="no-sort">Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for usuario in usuarios %}
+                                <tr>
+                                    <td><a href="{{ path('usuarios_show', { 'id': usuario.id }) }}">{{ usuario.id }}</a></td>
+                                    <td>{{ usuario.nombre }}</td>
+                                    <td>{{ usuario.apellidos }}</td>
+                                    <td>{{ usuario.telefono }}</td>
+                                    <td>{{ usuario.direccion }}</td>
+                                    <td>{{ usuario.sexo }}</td>
+                                    <td>{{ usuario.redesSociales }}</td>
+                                    <td>
+                                        <a href="{{ path('usuarios_show', { 'id': usuario.id }) }}" class="btn btn-primary">Detalles</a>
+                                        <a href="{{ path('usuarios_edit', { 'id': usuario.id }) }}" class="btn btn-warning">Editar</a>
+                                        
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <a href="{{ path('usuarios_new') }}" class="btn btn-default">Crear nuevo usuario</a>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

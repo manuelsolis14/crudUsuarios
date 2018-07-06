@@ -1,0 +1,46 @@
+UsuariosBundle\Entity\Usuarios:
+    type: entity
+    table: null
+    repositoryClass: UsuariosBundle\Repository\UsuariosRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombre:
+            type: string
+            length: '80'
+            column: Nombre
+        apellidos:
+            type: string
+            length: '100'
+            column: Apellidos
+        telefono:
+            type: integer
+            column: Telefono
+        direccion:
+            type: string
+            length: '100'
+        sexo:
+            type: string
+            length: '40'    
+        redesSociales:
+            type: string
+            length: 255
+        userName:
+            type: string
+            length: '100'
+            unique: true
+            column: user_name
+        password:
+            type: string
+            length: '255'
+        role:
+            type: string
+            length: '50'
+        isActive:
+            type: boolean
+            column: is_active
+    lifecycleCallbacks: {  }

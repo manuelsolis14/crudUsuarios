@@ -1,0 +1,144 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="content container">
+        <div class="body">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2 class="page-title">Editar usuario</h2>
+                    <section class="widget">
+                        <div class="body">
+                            {{ form_start(edit_form, { 'attr' : {'class' : 'form-horizontal'} }) }}
+                            <fieldset>
+                                <legend class="section"></legend>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label" for="max-length">{{ form_label(edit_form.nombre) }}</label>
+                                        <div class="col-sm-7">
+                                            {{ form_widget(edit_form.nombre, { 'attr' : {'class' : 'form-control input-transparent'} }) }}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label" for="max-length">{{ form_label(edit_form.apellidos) }}</label>
+                                        <div class="col-sm-7">
+                                            {{ form_widget(edit_form.apellidos, { 'attr' : {'class' : 'form-control input-transparent'} }) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label" for="max-length">{{ form_label(edit_form.telefono, 'Teléfono') }}</label>
+                                        <div class="col-sm-7">
+                                            {{ form_widget(edit_form.telefono, { 'attr' : {'class' : 'form-control input-transparent'} }) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label" for="max-length">{{ form_label(edit_form.direccion, 'Dirección') }}</label>
+                                        <div class="col-sm-7">
+                                            {{ form_widget(edit_form.direccion, { 'attr' : {'class' : 'form-control input-transparent'} }) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label" for="max-length">{{ form_label(edit_form.sexo) }}</label>
+                                        <div class="col-sm-7">
+                                            {{ form_widget(edit_form.sexo, { 'attr' : {'class' : 'form-control input-transparent'} }) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label" for="max-length">{{ form_label(edit_form.redesSociales) }}</label>
+                                        <div class="col-sm-7">
+                                            {{ form_widget(edit_form.redesSociales, { 'attr' : {'class' : 'form-control input-transparent'} }) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label" for="max-length">{{ form_label(edit_form.userName) }}</label>
+                                        <div class="col-sm-7">
+                                            {{ form_widget(edit_form.userName, { 'attr' : {'class' : 'form-control input-transparent'} }) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label" for="max-length">{{ form_label(edit_form.password) }}</label>
+                                        <div class="col-sm-7">
+                                            {{ form_widget(edit_form.password, { 'attr' : {'class' : 'form-control input-transparent'} }) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label" for="max-length">{{ form_label(edit_form.isActive) }}</label>
+                                        <div class="col-sm-7">
+                                            {{ form_widget(edit_form.isActive, { 'attr' : {'class' : 'form-control input-transparent'} }) }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <div class="form-actions">
+                                <div class="row">
+                                    <div class="col-sm-offset-4 col-sm-7">
+                                        <div class="btn-toolbar">
+                                            <input type="submit" value="Guardar" class="btn btn-success" >
+                                            <a href="{{ path('usuarios_index') }}" class="btn btn-default">Regresar</a>
+                                            {{ form_end(edit_form) }}
+                                            {{ form_start(delete_form) }}
+                                            <input type="submit" value="Eliminar" class="btn btn-danger">
+                                            {{ form_end(delete_form) }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{# 
+
+
+    <div class="container">
+        <div class="col-md-12">
+            <div class="page-header">
+                <h2>Editar usuario</h2>
+            </div>
+        </div>
+        <div class="col-md-11 col-md-offset-1">
+            <div class="panel-body inputs">
+                {{ form_start(edit_form) }}
+                {{ form_widget(edit_form) }}
+            </div>
+            <div class="panel-default text-right">
+                <div class="col-md-5">
+                    <div class="col-md-3">
+                        <input type="submit" value="Editar" class="btn btn-success"/>
+                        {{ form_end(edit_form) }}
+                    </div>
+                    <div class="col-md-4">
+                        <a href="{{ path('usuarios_index') }}" class="btn btn-info">Regresar</a>
+                    </div>
+                    <div class="col-md-3">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <li>
+    </li>
+</ul> #}
+{% endblock %}

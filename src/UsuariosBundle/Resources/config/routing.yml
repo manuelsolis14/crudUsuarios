@@ -1,0 +1,18 @@
+usuarios_usuarios:
+    resource: "@UsuariosBundle/Resources/config/routing/usuarios.yml"
+    prefix:   /usuarios
+
+usuarios_login:
+  path: /login
+  defaults: { _controller: UsuariosBundle:Security:login }
+
+usuarios_check:
+  path: /login_check
+  defaults: { _controller: UsuariosBundle:Security:loginCheck }
+
+usuarios_logout:
+  path: /logout
+  
+usuarios_homepage:
+    path:     /
+    defaults: { _controller: UsuariosBundle:Usuarios:home }

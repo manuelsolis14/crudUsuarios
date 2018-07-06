@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="content container">
+        <div class="body">
+            <div class="row">
+                <div class="col-md-9 col-md-offset-2">
+                    <h2 class="page-title">Detalles del usuario {{ usuario.nombre }} </h2>
+                    <section class="widget">                    
+                        <div class="body">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="text-align-center">
+                                        {% if usuario.sexo == "Masculino" %}
+                                            <img class="img-circle" src="{{ asset("bundles/usuarios/img/male.png")}}" alt="64x64" style="height: 112px;">
+                                        {% else %}
+                                            <img class="img-circle" src="{{ asset("bundles/usuarios/img/female.png")}}" alt="64x64" style="height: 112px;">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <h3 class="mt-sm mb-xs">{{ usuario.nombre }} {{ usuario.apellidos }}</h3>
+                                    
+                                    <div class="col-md-12">
+                                        <div class="widget">
+                                            <div id="carousel-example-generic" class="carousel slide">
+                                                <ol class="carousel-indicators outer">
+                                                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                                    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                                                    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                                                </ol>
+                                                <div class="carousel-inner text-align-center">
+                                                    <div class="item active">
+                                                        <h4 ><em>Teléfono</em></h4>
+                                                        <h4>{{ usuario.telefono }}</h4>
+                                                    </div>
+                                                    <div class="item">
+                                                        <h4 ><em>Dirección</em></h4>
+                                                        <h4>{{ usuario.direccion }}</h4>
+                                                    </div>
+                                                    <div class="item">
+                                                        <h4><em>Sexo</em></h4>
+                                                        <h4>{{ usuario.sexo }}</h4>
+                                                    </div>
+                                                    <div class="item">
+                                                        <h4 ><em>Redes sociales:</em></h4>
+                                                        <h4>{{ usuario.redesSociales }}</h4>
+                                                    </div>
+                                                    <div class="item">
+                                                        <h4 ><em>Usuario:</em></h4>
+                                                        <h4>{{ usuario.username }}</h4>
+                                                    </div>
+                                                </div>
+                                                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                                    <i class="fa fa-angle-left"></i>
+                                                </a>
+                                                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                                    <i class="fa fa-angle-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <div class="row">
+                                    <div class="col-sm-offset-4 col-sm-7">
+                                        <div class="btn-toolbar">
+                                            <a href="{{ path('usuarios_edit', { 'id': usuario.id }) }}" class="btn btn-primary">Editar</a>
+                                            <a href="{{ path('usuarios_index') }}" class="btn btn-default">Regresar</a>
+                                            {{ form_start(delete_form) }}
+                                            <input type="submit" value="Eliminar" class="btn btn-danger">
+                                            {{ form_end(delete_form) }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}
